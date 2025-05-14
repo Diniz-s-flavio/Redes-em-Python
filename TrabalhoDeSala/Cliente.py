@@ -2,40 +2,42 @@ import socket
 import threading
 from cryptography.fernet import Fernet
 
+# === Criptografia ===
 chave_secreta = b'Qv5jwkrmmuZ1lgGNOYyk7UCy4dlNHkSXiRjLBNn-HHY='
 fernet = Fernet(chave_secreta)
 
-def receber_mensagens(cliente):
+def criptografar(texto):
+    return fernet.encrypt(texto.encode())
+
+def descriptografar(texto_criptografado):
+    return fernet.decrypt(texto_criptografado).decode()
+
+def receive_messages(sock):
     while True:
         try:
-            dados = cliente.recv(4096)
-            if not dados:
-                print("Conexão encerrada pelo servidor.")
+            msg_criptografada = sock.recv(1024)
+            if msg_criptografada:
+                msg = descriptografar(msg_criptografada)
+                print(msg)
+            else:
                 break
-            mensagem = fernet.decrypt(dados).decode()
-            print(f"\n[Outro cliente]: {mensagem}")
-        except Exception as e:
-            print("Erro ao receber/descriptografar:", e)
+        except:
             break
 
-def main():
-    host = 'localhost'
-    porta = 12345
+def start():
+    host = '192.168.0.100'
+    port = 12345
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((host, port))
 
-    try:
-        cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        print("[DEBUG] Tentando conectar ao servidor...")
-        cliente.connect((host, porta))
-        print("[DEBUG] Conectado com sucesso ao servidor!")
+    threading.Thread(target=receive_messages, args=(sock,), daemon=True).start()
 
-        threading.Thread(target=receber_mensagens, args=(cliente,), daemon=True).start()
-
-        while True:
-            mensagem = input("Você: ")
-            criptografada = fernet.encrypt(mensagem.encode())
-            cliente.sendall(criptografada)
-    except Exception as e:
-        print("Erro ao conectar ou durante a comunicação:", e)
+    while True:
+        try:
+            msg = input()
+            sock.send(criptografar(msg))
+        except:
+            break
 
 if __name__ == "__main__":
-    main()
+    start()

