@@ -1,43 +1,62 @@
 import socket
 import threading
+import ssl
 from cryptography.fernet import Fernet
 
-# === Criptografia ===
-chave_secreta = b'Qv5jwkrmmuZ1lgGNOYyk7UCy4dlNHkSXiRjLBNn-HHY='
-fernet = Fernet(chave_secreta)
+# Será inicializado após receber a chave do servidor
+fernet = None
+
 
 def criptografar(texto):
     return fernet.encrypt(texto.encode())
 
+
 def descriptografar(texto_criptografado):
     return fernet.decrypt(texto_criptografado).decode()
+
 
 def receive_messages(sock):
     while True:
         try:
-            msg_criptografada = sock.recv(1024)
-            if msg_criptografada:
-                msg = descriptografar(msg_criptografada)
-                print(msg)
-            else:
+            data = sock.recv(1024)
+            if not data:
+                print("Conexão encerrada pelo servidor.")
                 break
-        except:
+            print(descriptografar(data))
+        except Exception as e:
+            print(f"Erro ao receber mensagem: {e}")
             break
 
+
 def start():
-    host = '192.168.0.100'
-    port = 12345
+    global fernet
+    host = '127.0.0.1'
+    port = 5556
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Cria um contexto SSL
+    context = ssl._create_unverified_context()
+
+    # Conecta o socket ao servidor através de SSL
+    sock = context.wrap_socket(sock, server_hostname=host)
     sock.connect((host, port))
 
+    # === Recebe a chave Fernet antes de qualquer mensagem ===
+    chave_recebida = sock.recv(1024).strip()
+    fernet = Fernet(chave_recebida)
+
+    # === Inicia a thread de recebimento ===
     threading.Thread(target=receive_messages, args=(sock,), daemon=True).start()
 
+    # === Loop de envio de mensagens ===
     while True:
         try:
             msg = input()
             sock.send(criptografar(msg))
         except:
             break
+
+
 
 if __name__ == "__main__":
     start()
