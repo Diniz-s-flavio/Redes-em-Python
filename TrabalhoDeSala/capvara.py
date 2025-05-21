@@ -3,16 +3,13 @@ import threading
 import time
 from cryptography.fernet import Fernet
 
-# Chave do servidor (a mesma usada no código original)
 chave_secreta = b'Qv5jwkrmmuZ1lgGNOYyk7UCy4dlNHkSXiRjLBNn-HHY='
 fernet = Fernet(chave_secreta)
 
-host = '192.168.0.100'  # IP do servidor alvo
+host = '192.168.0.100'
 porta = 12345
 
-# Número de conexões que serão abertas simultaneamente
 NUM_CLIENTES = 1000
-# Intervalo entre envios de mensagens em cada cliente (segundos)
 INTERVALO_MSG = 0.1
 
 def ataque_flood(id_cliente):
@@ -23,10 +20,10 @@ def ataque_flood(id_cliente):
 
         nickname = f"bot{id_cliente}"
         cliente.sendall(fernet.encrypt(f"NICK:{nickname}".encode()))
-        cliente.recv(4096)  # Espera resposta do nick
+        cliente.recv(4096)
 
-        cliente.sendall(fernet.encrypt(b"grupo"))  # Entra no modo grupo
-        cliente.recv(4096)  # Espera resposta
+        cliente.sendall(fernet.encrypt(b"grupo"))
+        cliente.recv(4096)
 
         while True:
             mensagem = f"{nickname}: teste de carga {time.time()}"
@@ -43,11 +40,11 @@ def main():
         t.daemon = True
         t.start()
         threads.append(t)
-        time.sleep(0.02)  # pequeno atraso para não explodir tudo de uma vez
+        time.sleep(0.02)
 
     print(f"[INFO] {NUM_CLIENTES} bots iniciados. Enviando mensagens em massa...")
     while True:
-        time.sleep(1)  # Mantém o programa rodando
+        time.sleep(1)
 
 if __name__ == "__main__":
     main()

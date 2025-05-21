@@ -30,7 +30,7 @@ def receive_messages(sock):
 
 def start():
     global fernet
-    host = '127.0.0.1'
+    host = '192.168.0.104'
     port = 5556
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
