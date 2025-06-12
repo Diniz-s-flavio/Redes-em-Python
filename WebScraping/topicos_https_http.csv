@@ -1,0 +1,135 @@
+site,conteudo
+Alura (HTTPS),Modelo OSI: Entenda seu conceito e camadas de funcionamento
+Alura (HTTPS),Compartilhe
+Alura (HTTPS),Esse artigo faz parte da
+Alura (HTTPS),Formação DevOps
+Alura (HTTPS),"O modelo OSI (Open Systems Interconnection) é uma referência fundamental na área deredes de computadores, proporcionando umframeworkpara entender e padronizar a comunicação entre sistemas distintos."
+Alura (HTTPS),"Dividido em sete camadas distintas, o modelo OSI organiza as funções de rede desde a transmissão física dos dados até a apresentação das informações ao usuário final."
+Alura (HTTPS),"Cada camada desempenha um papel específico e interage com as adjacentes, facilitando a interoperabilidade entre diferentes tecnologias e protocolos. Neste artigo, exploraremos detalhadamente cada camada do modelo OSI e sua importância no funcionamento eficiente das redes modernas."
+Alura (HTTPS),O que é o modelo OSI?
+Alura (HTTPS),"O processo de enviar uma requisição para um servidor é parecido com o de enviar um pacote pelos correios, isto é, passa por algumas etapas até chegar ao destino final. Esses passos são o que chamamos demodelo OSI."
+Alura (HTTPS),"O termo “protocolo OSI” refere-se ao Modelo de Referência OSI (Open Systems Interconnection), também conhecido como Modelo OSI."
+Alura (HTTPS),Ele é um modelo conceitual usado para entender e descrever as funcionalidades e interações entre os diferentes protocolos de rede em um sistema de comunicação de dados.
+Alura (HTTPS),"Quando fazemos umarequisiçãopara um servidor web, ela percorre um longo caminho da sua máquina até o servidor."
+Alura (HTTPS),"Essa requisição que saí do seu computador por umcabo de rede, ou pelo ar, caso use umarede Wi-Fi, passa pelo seu provedor de internet e por diversos outros servidores até chegar no destino."
+Alura (HTTPS),"Quando o servidor manda uma resposta, esse caminho se repete. Mas como a requisição sabe qual caminho seguir? Como ela sai do meu computador e chega ao servidor? É isso que veremos a seguir."
+Alura (HTTPS),Como surgiu o modelo OSI e quem o desenvolveu?
+Alura (HTTPS),O Modelo OSI (Open Systems Interconnection) foi desenvolvido pelaInternational Organization for Standardization(ISO) no final da década de 1970.
+Alura (HTTPS),AISOé uma organização internacional de padronização que desenvolve e publica normas internacionais.
+Alura (HTTPS),"O desenvolvimento do Modelo OSI foi uma resposta à crescente complexidade das redes de computadores e à necessidade de criar um conjunto de padrões que permitisse a comunicação eficaz emredes de computadores, dessa forma, foi dividido o processo em sete camadas distintas, que você confere adiante nos próximos tópicos."
+Alura (HTTPS),Como funciona o modelo OSI
+Alura (HTTPS),"Como vimos, é possível dizer que o modelo OSI se refere aos passos do processo de enviar uma requisição para um servidor. Esse modelo funciona através de uma padronização para os protocolos de rede."
+Alura (HTTPS),"Mas qual a função do modelo OSI neste processo? O que ele faz é classificar os protocolos em grupos específicos, ou camadas, cada uma com funções próprias para uma comunicação eficaz e padronizada."
+Alura (HTTPS),"Embora o modelo OSI não seja algo fácil de esbarrar no dia a dia, é um conceito fundamental para profissionais de rede e demais profissionais da área de tecnologia."
+Alura (HTTPS),Quais são as vantagens do Modelo OSI na arquitetura de redes?
+Alura (HTTPS),"O modelo OSI oferece uma estrutura conceitual para a arquitetura de redes, dividindo o processo em 7 camadas, cada uma com suas funções específicas."
+Alura (HTTPS),"Entre suas vantagens, podemos citar, principalmente:"
+Alura (HTTPS),"O modelo OSI permite a visualização das redes de forma mais compreensível, isso porque o OSI divide o processo em camadas distintas, em uma ordem lógica e fácil de seguir."
+Alura (HTTPS),"Em resumo, o Modelo OSI torna a complexidade das redes mais compreensível devido uma representação estruturada e hierárquica do processo de comunicação."
+Alura (HTTPS),As sete camadas do Modelo OSI são independentes e podem ser modificadas ou atualizadas individualmente.
+Alura (HTTPS),"Diferente daarquitetura monolítica, se ocorrer uma mudança em uma camada, não prejudicará as demais camadas."
+Alura (HTTPS),O Modelo OSI estabelece um conjunto de padrões e diretrizes para a comunicação em redes.
+Alura (HTTPS),"Isso permite que diferentes fabricantes e pessoas desenvolvedoras sigam as mesmas especificações, facilitando a interoperabilidade entre sistemas e dispositivos."
+Alura (HTTPS),"Ao dividir o processo de comunicação em camadas, é mais fácil isolar e diagnosticar problemas específicos em uma determinada camada."
+Alura (HTTPS),"O modelo OSI fornece uma estrutura padronizada e modular para a comunicação em redes, permitindo que diferentes sistemas e dispositivos se comuniquem de forma eficiente, mesmo que sejam de fabricantes diferentes ou utilizem tecnologias distintas."
+Alura (HTTPS),Quais são as 7 camadas de rede do modelo OSI?
+Alura (HTTPS),"Como vimos, o modelo OSI é um padrão para osprotocolos de rede."
+Alura (HTTPS),"Protocolos nada mais são do que regras de comunicação usadas para conectar dois ou mais computadores. O que o modelo OSI faz é classificar esses protocolos em grupos específicos, ou camadas."
+Alura (HTTPS),"Ele é dividido em sete camadas, cada uma com funções específicas, que permitem que os dispositivos de rede se comuniquem de maneira eficiente e padronizada."
+Alura (HTTPS),"A seguir, você confere quais são as sete camadas do modelo OSI:"
+Alura (HTTPS),"A primeira camada OSI é a camada física. Voltando para o exemplo dos correios, a camada física compreenderia as estradas, ou seja, o caminho que os pacotes percorrem para chegar ao destino."
+Alura (HTTPS),"Mas qual é a função da camada física do modelo OSI? Nesta camada são especificados osdispositivos, como hubse os meios de transmissão, como oscabos de rede."
+Alura (HTTPS),Os dados são transmitidos por esses meios e processados na próxima camada.
+Alura (HTTPS),"Fazendo um paralelo com os correios, essa camada funciona como um fiscal. Ele observa se os pacotes têm algum defeito em sua formatação e controla o fluxo com que eles são enviados."
+Alura (HTTPS),"Entenda a seguir, quais são as principais funções da camada de enlace do modelo OSI."
+Alura (HTTPS),"Nesta camada, os dados recebidos do meio físico são verificados para ver se possuem algum erro e, caso possuam, ele pode ser corrigido."
+Alura (HTTPS),"Dessa forma, as camadas superiores podem assumir uma transmissão praticamente sem erros. Esta camada também controla o fluxo que os dados são transmitidos."
+Alura (HTTPS),"É nela que são definidas astecnologias como as VLans, outopologiascomo a Token ring, ou a ponto-a-ponto."
+Alura (HTTPS),Também é nela quedispositivos como os switchesfuncionam.
+Alura (HTTPS),Esta camada é dividida em duas subcamadas:A camada MAC e a camada LLC.
+Alura (HTTPS),"É esta camada que possibilita a conexão de diversos computadores em uma rede. Cada máquina conectada na rede tem um endereço físico, conhecido comoendereço MAC."
+Alura (HTTPS),"É esse endereço que a camada utiliza para identificar e enviar os pacotes.
+Essa camada atua como uma interface entre a camada física e a subcamada LLC."
+Alura (HTTPS),É nesta camada que temos o controle de fluxo dos dados na rede. É por conta dela que conseguimos ter vários protocolos da próxima camada convivendo dentro de uma mesma rede.
+Alura (HTTPS),"Quando estamos enviando uma carta, os correios verificam quem é o destinatário ou destinatária e quem é o (a) remetente da mensagem."
+Alura (HTTPS),"Se existirem muitas mensagens para serem enviadas, eles podem priorizar quais serão enviadas primeiro e qual é o melhor caminho para enviar essa carta."
+Alura (HTTPS),"Então, quais são os serviços oferecidos pela camada de rede do modelo OSI? Isso é justamente o que a camada três faz, ela atua como uma central dos correios."
+Alura (HTTPS),"Esta é talvez a camada mais atuante nas redes, principalmente na internet."
+Alura (HTTPS),É nela que temos o endereçamento IP de origem e de destino; ela também pode priorizar alguns pacotes e decidir qual caminho seguir para enviar seus dados.
+Alura (HTTPS),"Essa camada, basicamente, controla oroteamentoentre a origem e o destino do pacote."
+Alura (HTTPS),"""Mas por que utilizar o endereço IP se já temos o endereço MAC?”"
+Alura (HTTPS),"O endereço MACé o endereço físico de quem envia o pacote. Ou seja, se enviarmos um pacote e ele passar por cinco dispositivos diferentes (roteadores, switches, ou servidores, por exemplo) o endereço MAC é alterado no processo. Já o endereço IP não sofre essa alteração."
+Alura (HTTPS),O endereço IPé a identificação da sua máquina na rede. É aquele endereço como 192.168.0.1.
+Alura (HTTPS),"É nessa camada que temos protocolos como oIPou oICMP.
+Bem, as cartas chegaram à central dos correios, agora elas precisam ser transportadas."
+Alura (HTTPS),"Se na camada um temos as estradas e os caminhos que os dados percorrem, na camada quatro temos os caminhões e os carteiros ou carteiras."
+Alura (HTTPS),É esta camada que garante o envio e o recebimento dos pacotes vindos da camada três. Ela gerencia o transporte dos pacotes para garantir o sucesso no envio e no recebimento de dados.
+Alura (HTTPS),"Esta camada lida muito com a qualidade do serviço para que os dados sejam entregues com consistência, isto é, sem erros ou duplicações. Porém, nem todos os protocolos desta camada garantem a entrega da mensagem."
+Alura (HTTPS),Protocolos muito comuns dessa camada são os protocolosTCPemUDP.
+Alura (HTTPS),"O primeiro garante a entrega da mensagem, diferente do segundo. Por não garantir a entrega da mensagem, o protocolo UDP é um pouco mais rápido que o TCP."
+Alura (HTTPS),"Bem, mas para ocorrer o transporte de um pacote entre os computadores, é necessário que as máquinas consigam se comunicar. Isso é função da próxima camada."
+Alura (HTTPS),Leia também:O que é UDP e TCP? Entenda quais as diferenças e como funciona cada Protocolo
+Alura (HTTPS),Esta camada é responsável por estabelecer e encerrar a conexão entre hosts. É ela quem inicia e sincroniza os hosts.
+Alura (HTTPS),"Além de realizar o estabelecimento das sessões, esta camada também provém algum suporte a elas, como registros de log e realização de tarefas de segurança."
+Alura (HTTPS),"Recebemos os pacotes, vamos checá-los para ver que dados têm dentro?
+Ainda não podemos."
+Alura (HTTPS),"Os dados ainda precisam ser tratados para serem usados. Como a camada de sessão só é responsável por estabelecer a conexão entre os hosts, o tratamento dos dados é de responsabilidade da próxima camada."
+Alura (HTTPS),Esta é a camada responsável por fazer a tradução dos dados para que a próxima camada os use.
+Alura (HTTPS),"Nesta camada temos a conversão de códigos para caracteres, a conversão e compactação dos dados, além dacriptografiadesses dados, caso necessite."
+Alura (HTTPS),"Depois de tratados, esses dados estão prontos para serem usados na próxima camada."
+Alura (HTTPS),"A última camada do modelo OSI é a camada para consumir os dados.Nesta camada, temos os programas que garantem ainteração humano-máquina."
+Alura (HTTPS),"Mas, qual é a função da camada de aplicação? Nela conseguimos enviar e-mails, transferir arquivos, acessar websites,conectar remotamente em outras máquinas, entre outras coisas (Falando em conectar remotamente, você conhece as diferenças entre Telnet e SSH?)."
+Alura (HTTPS),"É nesta camada que temos os protocolos mais conhecidos como oHTTP, FTP,além de serviços como o DNS."
+Alura (HTTPS),Quais são os desafios na implementação do modelo OSI?
+Alura (HTTPS),"Como qualquer implementação nova em sistemas, podem ocorrer desafios durante esse processo."
+Alura (HTTPS),"Esses desafios incluem a atenção em lidar com atualizações e compatibilidade de protocolos, uma complexidade em gerenciar 7 camadas distintas e principalmente, garantir que todos os sistemas envolvidos sigam os mesmos padrões."
+Alura (HTTPS),É necessário conhecimento técnico e cuidado para aplicar boas práticas na implementação do modelo OSI para que seu uso seja eficaz.
+Alura (HTTPS),Principais dúvidas sobre o modelo OSI
+Alura (HTTPS),Aqui estão as principais dúvidas sobre modelo OSI:
+Alura (HTTPS),ISO (International Organization for Standardization) é uma organização internacional de padronização que desenvolve e publica normas internacionais.
+Alura (HTTPS),OSI (Open Systems Interconnection) é um modelo conceitual usado para entender e descrever as funcionalidades e interações entre os diferentes protocolos de rede em um sistema de comunicação de dados desenvolvido pela ISO.
+Alura (HTTPS),"O modelo OSI é uma padronização em um sistema de dados que possui 7 camadas, já o modelo TCP/IP é dividido em apenas 4 camadas."
+Alura (HTTPS),"Além disso, o modelo TCP/IP é considerado mais prático e acaba sendo amplamente implementado em redes reais e de todo o mundo, enquanto o modelo OSI é considerado mais teórico e adequado para fins educacionais."
+Alura (HTTPS),"O Modelo OSI oferece uma estrutura lógica e mais fácil de seguir, permitindo uma resolução mais eficiente de problemas em redes."
+Alura (HTTPS),Um exemplo de solução através do Modelo OSI é o seguinte: imagine que os funcionários e funcionárias de uma empresa estão enfrentando problemas ao acessar a internet.
+Alura (HTTPS),O administrador de redes consegueisolaro problema na camada de rede e realizar uma análise detalhada dela.
+Alura (HTTPS),Isso ocorre porque as sete camadas do Modelo OSI são independentes e podem ser modificadas ou atualizadas individualmente.
+Alura (HTTPS),Para saber mais
+Alura (HTTPS),"Quando falamos das camadas domodelo OSI, costumamos falar na ordem inversa, isto é, a camada mais alta é a camada 7, enquanto a camada 1 é a camada mais baixa:"
+Alura (HTTPS),"Além do modelo OSI, outro modelo utilizado em redes é oTCP/IP."
+Alura (HTTPS),"Esse modelo, que leva o nome de dois protocolos, busca agrupar os protocolos da mesma forma que o modelo OSI, porém com menos camadas."
+Alura (HTTPS),"Conhecer os protocolos é uma dasskillsde quem trabalha com infra. Não é necessário saber todos, mas conhecer alguns pode ajudar na hora de resolver alguns problemas na rede."
+Alura (HTTPS),"Se quiser aprender um pouco mais sobre esses protocolos, temos aqui na Alura umaformação em redes."
+Alura (HTTPS),"Nela você aprenderá sobre os protocolos, como criar e configurar uma rede local, sobreVLans, além de segurança e muito mais."
+Alura (HTTPS),"Se você é umdesenvolvedor ou desenvolvedora web, conhecer os protocolos por trás de seus projetos pode ajudar a otimizar o código e melhorar os serviços."
+Alura (HTTPS),Na web o principal protocolo é o HTTP e aqui na Alura temos umcurso sobre este protocolo.
+Alura (HTTPS),Nele você aprenderá como utilizar tudo que oprotocolo HTTPtem para oferecer.
+Alura (HTTPS),"Yuri é desenvolvedor e instrutor. É estudante de Sistemas de Informação na FIAP e formado como Técnico em Informática no Senac SP. O seu foco é nas plataformas Java e Python e em outras áreas como Arquitetura de Software e Machine Learning. Yuri também atua como editor de conteúdo no blog da Alura, onde escreve, principalmente, sobre Redes, Docker, Linux, Java e Python."
+Alura (HTTPS),Veja outros artigos sobreDevOps
+Alura (HTTPS),Quer mergulhar em tecnologia e aprendizagem?
+Alura (HTTPS),"Receba conteúdos, dicas, notícias, inovações e tendências sobre o mercado tech diretamente na sua caixa de entrada."
+Alura (HTTPS),AOVS Sistemas de Informática S.ACNPJ 05.555.382/0001-33
+Alura (HTTPS),Nossas redes e apps
+Alura (HTTPS),Nossas redes e apps
+Alura (HTTPS),Institucional
+Alura (HTTPS),A Alura
+Alura (HTTPS),Conteúdos
+Alura (HTTPS),Fale Conosco
+Alura (HTTPS),Novidades e Lançamentos
+Alura (HTTPS),Cursos
+Alura (HTTPS),Cursos universitários FIAP
+Alura (HTTPS),Alura
+Alura (HTTPS),Educação em Tecnologia
+Alura (HTTPS),Mais Alura
+Alura (HTTPS),Comunidade
+Alura (HTTPS),Podcasts
+HTTPForever (HTTP),HTTP FOREVER
+HTTPForever (HTTP),A reliably insecure connection
+HTTPForever (HTTP),Why does this site exist?
+HTTPForever (HTTP),"This domain started out as my personal 'captive portal buster' but I wanted to publicise it for anyone to use. If you're on a train, in a hotel or bar, on a flight or anywhere that you have to login for WiFi, this site could help you!"
+HTTPForever (HTTP),How does it work?
+HTTPForever (HTTP),"If you connect to a WiFi hotspot whilst out and about, sometimes you have to login or accept Terms and Conditions. To do that the 'captive portal' has to intercept one of your requests and inject the login page for the WiFi. This usually results in a big, red warning from your browser which you shouldneverclick through! Instead, open a new tab in your browser and come here!"
+HTTPForever (HTTP),Can I use it?
+HTTPForever (HTTP),"Yes! Anyone is free to use or link to this site, just make sure you're always on the HTTP version:http://httpforever.com"
+HTTPForever (HTTP),Who built this?
+HTTPForever (HTTP),"This site was built by Scott Helme, a security researcher trying to help make the web more secure."
