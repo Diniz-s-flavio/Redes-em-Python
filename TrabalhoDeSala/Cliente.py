@@ -8,11 +8,13 @@ fernet = None
 
 
 def criptografar(texto):
-    return fernet.encrypt(texto.encode())
+    # return fernet.encrypt(texto.encode())
+    return texto.encode()
 
 
 def descriptografar(texto_criptografado):
-    return fernet.decrypt(texto_criptografado).decode()
+    # return fernet.decrypt(texto_criptografado).decode()
+    return texto_criptografado.decode()
 
 
 def receive_messages(sock):
@@ -30,29 +32,24 @@ def receive_messages(sock):
 
 def start():
     global fernet
-    host = '192.168.0.104'
-    port = 5556
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    host = "10.44.132.10"
+    port = 5555
 
-    # Cria um contexto SSL
-    context = ssl._create_unverified_context()
-
-    # Conecta o socket ao servidor através de SSL
-    sock = context.wrap_socket(sock, server_hostname=host)
-    sock.connect((host, port))
+    clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    clientSocket.connect((host, port))
 
     # === Recebe a chave Fernet antes de qualquer mensagem ===
-    chave_recebida = sock.recv(1024).strip()
+    chave_recebida = clientSocket.recv(1024).strip()
     fernet = Fernet(chave_recebida)
 
     # === Inicia a thread de recebimento ===
-    threading.Thread(target=receive_messages, args=(sock,), daemon=True).start()
+    threading.Thread(target=receive_messages, args=(clientSocket,), daemon=True).start()
 
     # === Loop de envio de mensagens ===
     while True:
         try:
             msg = input()
-            sock.send(criptografar(msg))
+            clientSocket.send(criptografar(msg))
         except:
             break
 
